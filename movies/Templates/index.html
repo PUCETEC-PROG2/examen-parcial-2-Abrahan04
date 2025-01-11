@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Listado de Películas</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'movies/styles.css' %}">
+</head>
+<body>
+    <h1>Listado de Películas</h1>
+    <ul>
+        {% for movie in movies %}
+            <li><a href="{% url 'movie_detail' movie.id %}">{{ movie.title }} - {{ movie.release_year }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+/html>
